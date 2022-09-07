@@ -1,46 +1,23 @@
 import React from "react";
-import "../css/estilos.css";
-import Background from "../img/fondo.jpg"
+import "../css/estilos.css"
+import "../css/bootstrap.css"
 
 
-
-const Header = (_) => {
-  return (
-    <div
-      className="bgded overlay padtop"
-      style={{ backgroundImage: `url("${Background}")` }}
-    >
-      <header id="header" className="hoc clear">
-        <div id="logo" className="fl_left">
-          <h1>
-            <a href="index.html">Trash - E</a>
-          </h1>
-        </div>
-        <nav id="mainav" className="fl_right">
-          <ul className="clear">
-            <li>
-              <a href="#">Inicia Sesión</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <div id="pageintro" className="hoc clear">
-        <article>
-          <h3 className="heading">Cuida tu Ciudad!</h3>
-          <p>Ayudanos a identificar los puntos de mayor desecho, y colabora!</p>
-          <footer>
-            <ul className="nospace inline pushright">
-              <li>
-                <a className="btn" href="#">
-                  Registrate
-                </a>
-              </li>
-            </ul>
-          </footer>
-        </article>
-      </div>
-    </div>
-  )
+export default function Header() {
+    return (
+        <header id="header" className="header">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6">
+                        <div className="text-container">
+                            <h1 className="h1-large">Cuida el medio ambiente y tu ciudad</h1>
+                            <a className="btn-solid-lg page-scroll" href="#">
+                                Registrate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    )
 }
-
-export default Header;

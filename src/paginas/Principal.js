@@ -1,15 +1,17 @@
 import React from "react";
-import Main_Tarjetas from "../componentes/Main_Tarjetas";
+import Tarjetas from "../componentes/Tarjetas";
 import Header from "../componentes/Header";
-import Register from "../componentes/Register"
+import NavFile from "../componentes/NavFile"
+
 
 
 const Principal = () => {
     return (
         <div>
+            <NavFile />
             <Header />
-            <Main_Tarjetas />
-            <Register />
+            <Tarjetas />
+            
         </div>
     )
 }
