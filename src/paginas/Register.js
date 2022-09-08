@@ -56,7 +56,7 @@ const Register = (_) => {
                     </div>
                     <div className="signup-image">
                         <figure>
-                            <img src={ImagenRegister} alt="sing up image" />
+                            <img src={ImagenRegister}  />
                         </figure>
                     </div>
                 </div>

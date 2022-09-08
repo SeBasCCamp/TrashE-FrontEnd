@@ -9,7 +9,7 @@ export default function Login() {
                 <div className="signin-content">
                     <div className="signin-image">
                         <figure>
-                            <img src={ImagenLogin} alt="sing up image" />
+                            <img src={ImagenLogin} alt="imagenLogin" />
                         </figure>
                     </div>
                     <div className="signin-form">
