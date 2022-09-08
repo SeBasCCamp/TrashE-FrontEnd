@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import "./css/estilos.css"
 import Principal from './paginas/Principal';
+import UsuarioLayout from "./paginas/UserLayout";
+
 
 
 function App() {
@@ -12,7 +14,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/" element={<Principal/>}></Route>
+          <Route  path="/" element={<Principal/>}></Route>
+          <Route path="/user*" element={<UsuarioLayout />}></Route>
           
         </Routes>
       </Router>

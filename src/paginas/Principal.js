@@ -11,7 +11,9 @@ const Principal = () => {
             <NavFile />
             <Header />
             <Tarjetas />
-           
+            
+
+            
         </div>
     )
 }
