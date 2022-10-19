@@ -54,15 +54,41 @@ const Register = (_) => {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        id="floatingInputUsername"
-                                        placeholder="myusername"
+                                        id="floatingInputName"
+                                        placeholder="name"
                                         required=""
                                         autofocus=""
                                         onChange={cogerUsuario}
                                         value={usuario}
                                     />
-                                    <label htmlFor="floatingInputUsername">Usuario</label>
+                                    <label htmlFor="floatingInputName">Nombre</label>
                                 </div>
+                                <div className="form-floating mb-3">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="floatingInputApellido"
+                                        placeholder="apellido"
+                                        required=""
+                                        autofocus=""
+                                        
+                                    />
+                                    <label htmlFor="floatingInputName">Apellido</label>
+                                </div>
+                                <div className="form-floating mb-3">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="floatingInputDNI"
+                                        placeholder="dni"
+                                        required=""
+                                        autofocus=""
+                                        
+                                        
+                                    />
+                                    <label htmlFor="floatingInputName">DNI</label>
+                                </div>
+                            
                                 <div className="form-floating mb-3">
                                     <input
                                         type="email"
@@ -91,7 +117,7 @@ const Register = (_) => {
                                         className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
                                        
                                     >
-                                        Register
+                                        Registrate
                                     </button>
                                 </div>
 
