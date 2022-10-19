@@ -1,8 +1,42 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/register.css'
+import {useState} from 'react';
+import axios from "axios";
+
+
 
 const Register = (_) => {
+    const [usuario, setUsuario] = useState('');
+    const [contra, setContra] = useState('');
+    function SendDataRegistro() {
+        var config = {
+            method: 'post',
+            url: `http://157.245.136.111:5000/Auth/CrearCuenta?Nombre=${usuario}&Correo=hoea@unicom.ai&Contrasena=${contra}&DNI=76208176&Apellidos=meza`,
+            headers: { }
+          };
+          
+          axios(config)
+          .then(function (response) {
+            console.log(JSON.stringify(response.data));
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+    //Tomar usuario
+    const cogerUsuario = event => {
+      setUsuario(event.target.value);
+  
+      console.log('Usuario es:', event.target.value);
+    };
+    
+    //Tomar contraseña
+    const cogerContra = event => {
+      setContra(event.target.value);
+  
+      console.log('Contraseña es:', event.target.value);
+    };
     return (
         <div className="containeres">
             <div className="row">
@@ -15,7 +49,7 @@ const Register = (_) => {
                             <h5 className="card-title text-center mb-5 fw-light fs-5">
                                 Registrate
                             </h5>
-                            <form>
+                            
                                 <div className="form-floating mb-3">
                                     <input
                                         type="text"
@@ -24,12 +58,15 @@ const Register = (_) => {
                                         placeholder="myusername"
                                         required=""
                                         autofocus=""
+                                        onChange={cogerUsuario}
+                                        value={usuario}
                                     />
                                     <label htmlFor="floatingInputUsername">Usuario</label>
                                 </div>
                                 <div className="form-floating mb-3">
                                     <input
                                         type="email"
+                                    
                                         className="form-control"
                                         id="floatingInputEmail"
                                         placeholder="name@example.com"
@@ -43,14 +80,16 @@ const Register = (_) => {
                                         className="form-control"
                                         id="floatingPassword"
                                         placeholder="Password"
+                                        onChange={cogerContra}
+                                        value={contra}
                                     />
                                     <label htmlFor="floatingPassword">Contraseña</label>
                                 </div>
 
                                 <div className="d-grid mb-2">
-                                    <button
+                                    <button onClick={SendDataRegistro}
                                         className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
-                                        type="submit"
+                                       
                                     >
                                         Register
                                     </button>
@@ -59,7 +98,7 @@ const Register = (_) => {
                                 <hr className="my-4" />
 
 
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
