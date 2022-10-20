@@ -1,9 +1,42 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/login.css'
+import axios from "axios";
+import {useState} from 'react';
 
 
 export default function Login() {
+
+    const [correo, setCorreo] = useState('');
+    const [contra, setContra] = useState('');
+    //Tomar email
+    const cogerCorreo = event => {
+        setCorreo(event.target.value);
+    
+        console.log('Email es:', event.target.value);
+    };
+    //Tomar contraseña
+    const cogerContra = event => {
+        setContra(event.target.value);
+
+        console.log('Contraseña es:', event.target.value);
+    };
+    function SendDataLogin() {
+        var config = {
+            method: 'post',
+            url: `http://157.245.136.111:5000/Auth/logearse?Correo=${correo}&Contrasena=${contra}`,
+            headers: { }
+          };
+          console.log(config.url)
+          axios(config)
+          .then(function (response) {
+            console.log(JSON.stringify(response.data));
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        }
+    
     return (
         <div className="containeres">
             <div className="row">
@@ -16,7 +49,7 @@ export default function Login() {
                             <h5 className="card-title text-center mb-5 fw-light fs-5">
                                 Bienvenido de vuelta!
                             </h5>
-                            <form>
+                        
                                 <div className="form-floating mb-3">
                                     <input
                                         type="text"
@@ -24,9 +57,11 @@ export default function Login() {
                                         id="floatingInputUsername"
                                         placeholder="myusername"
                                         required=""
-                                        autofocus=""
+                                        
+                                        onChange={cogerCorreo}
+                                        value={correo}
                                     />
-                                    <label htmlFor="floatingInputUsername">Ingrese su usuario</label>
+                                    <label htmlFor="floatingInputUsername">Ingrese su correo</label>
                                 </div>
                                 <hr />
                                 <div className="form-floating mb-3">
@@ -35,14 +70,15 @@ export default function Login() {
                                         className="form-control"
                                         id="floatingPassword"
                                         placeholder="Password"
+                                        onChange={cogerContra}
+                                        value={contra}
                                     />
                                     <label htmlFor="floatingPassword">Contraseña</label>
                                 </div>
 
                                 <div className="d-grid mb-2">
-                                    <button
+                                    <button onClick={SendDataLogin}
                                         className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
-                                        type="submit"
                                     >
                                         Iniciar Sesión
                                     </button>
@@ -50,8 +86,7 @@ export default function Login() {
 
                                 <hr className="my-4" />
 
-
-                            </form>
+                        
                         </div>
                     </div>
                 </div>
