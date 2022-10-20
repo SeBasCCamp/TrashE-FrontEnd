@@ -8,14 +8,22 @@ import axios from "axios";
 
 const Register = (_) => {
     const [usuario, setUsuario] = useState('');
+    const [apellido, setApellido] = useState('');
+    const [dni, setDni] = useState('');
+    const [correo, setCorreo] = useState('');
     const [contra, setContra] = useState('');
     function SendDataRegistro() {
+        console.log("el usuario enviado a la api: " + usuario )
+        console.log("el usuario enviado a la api: " + apellido )
+        console.log("el usuario enviado a la api: " + dni )
+        console.log("el usuario enviado a la api: " + correo )
+        console.log("el usuario enviado a la api: " + contra )
         var config = {
             method: 'post',
-            url: `http://157.245.136.111:5000/Auth/CrearCuenta?Nombre=${usuario}&Correo=hoea@unicom.ai&Contrasena=${contra}&DNI=76208176&Apellidos=meza`,
+            url: `http://157.245.136.111:5000/Auth/CrearCuenta?Nombre=${usuario}&Apellidos=${apellido}&DNI=${dni}&Correo=${correo}&Contrasena=${contra}`,
             headers: { }
           };
-          
+          console.log(config.url)
           axios(config)
           .then(function (response) {
             console.log(JSON.stringify(response.data));
@@ -24,13 +32,30 @@ const Register = (_) => {
             console.log(error);
           });
       }
-    //Tomar usuario
+    //Tomar Usuario
     const cogerUsuario = event => {
       setUsuario(event.target.value);
   
       console.log('Usuario es:', event.target.value);
     };
+     //Tomar Apellido
+     const cogerApellido = event => {
+        setApellido(event.target.value);
+
+        console.log('Apellido es:', event.target.value);
+    };
+     //Tomar DNI
+     const cogerDni = event => {
+        setDni(event.target.value);
     
+        console.log('DNI es:', event.target.value);
+    };
+    //Tomar email
+    const cogerCorreo = event => {
+        setCorreo(event.target.value);
+    
+        console.log('Email es:', event.target.value);
+    };
     //Tomar contraseña
     const cogerContra = event => {
       setContra(event.target.value);
@@ -71,6 +96,8 @@ const Register = (_) => {
                                         placeholder="apellido"
                                         required=""
                                         autofocus=""
+                                        onChange={cogerApellido}
+                                        value={apellido}
                                         
                                     />
                                     <label htmlFor="floatingInputName">Apellido</label>
@@ -83,7 +110,8 @@ const Register = (_) => {
                                         placeholder="dni"
                                         required=""
                                         autofocus=""
-                                        
+                                        onChange={cogerDni}
+                                        value={dni}
                                         
                                     />
                                     <label htmlFor="floatingInputName">DNI</label>
@@ -96,6 +124,8 @@ const Register = (_) => {
                                         className="form-control"
                                         id="floatingInputEmail"
                                         placeholder="name@example.com"
+                                        onChange={cogerCorreo}
+                                        value={correo}
                                     />
                                     <label htmlFor="floatingInputEmail">Correo</label>
                                 </div>
