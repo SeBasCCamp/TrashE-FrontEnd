@@ -25,6 +25,28 @@ export default function NavFile() {
                             </Link>
                             
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link page-scroll" to={"user/user-map"}>
+                                Mapa
+                            </Link>
+                            
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link page-scroll" to={"user/user-publicaciones"}>
+                                Publicaciones
+                            </Link>
+                            
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link page-scroll" to={"user/user-reportes"}>
+                                Reportes
+                            </Link>
+                            
+                        </li>
+                       
+                       
                     </ul>
                 </div>
             </div>

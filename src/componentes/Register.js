@@ -3,10 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/register.css'
 import {useState} from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+
+
 
 
 
 const Register = (_) => {
+   
     const [usuario, setUsuario] = useState('');
     const [apellido, setApellido] = useState('');
     const [dni, setDni] = useState('');
@@ -143,12 +148,14 @@ const Register = (_) => {
                                 </div>
 
                                 <div className="d-grid mb-2">
-                                    <button onClick={SendDataRegistro}
+                                    <Link to={"/"}>
+                                    <button onClick={SendDataRegistro} 
                                         className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
                                        
                                     >
                                         Registrate
                                     </button>
+                                    </Link>
                                 </div>
 
                                 <hr className="my-4" />

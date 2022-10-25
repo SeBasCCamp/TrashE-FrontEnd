@@ -1,0 +1,234 @@
+.container{
+    margin-top:30px;
+}
+
+.app-mapa {
+    display: flex;
+    text-align: center;
+  }
+
+.content {
+	  text-align: center;
+	  border: 1px solid #f0f0f0;
+
+	  font-size: 14px;
+	  padding-left: 0;
+	  margin-bottom: 30px;
+
+    font-family: 'raleway';
+    padding:13px;
+  
+}
+
+.content li:first-child,
+.content li:last-child {
+	  padding: 20px 20px 0px 13px;
+}
+.content li {
+	  list-style: none;
+	  padding-top: 7px;
+	  padding-bottom: 7px;
+
+}
+
+.content big {
+	  font-size: 36px;
+}
+
+
+.pricing li:nth-last-child(2) {
+	  padding: 30px 13px;
+}
+
+
+
+
+/* Glyphicon Green */
+span.glyphicon-leaf {
+    font-size: 2.9em;
+    color: #5cb85c;
+	  display: block;
+	  margin: auto;
+    margin-bottom:7px;
+}
+/* Title Color Green*/
+.p-green big,
+.p-green h3 {
+	  color: #5cb85c;
+}
+/* Button Color Green*/
+.p-green button {
+	  background: #5cb85c;
+}
+
+
+/* Glyphicon Yellow */
+span.glyphicon-send {
+    font-size: 2.9em;
+    color: #f0ad4e;
+	  display: block;
+	  margin: auto;
+    margin-bottom:7px;
+
+}
+/* Button Color Yellow */
+.p-yel button {
+	  background: #f0ad4e;
+}
+/* Title Color Yellow */
+.p-yel big,
+.p-yel h3 {
+	  color: #f0ad4e;
+}
+
+
+
+/* Glyphicon blue */
+span.glyphicon-globe {
+    font-size: 2.9em;
+    color: #428bca;
+	  display: block;
+	  margin: auto;
+    margin-bottom:7px;
+}
+/* Button Color blue */
+.p-red button {
+	  background: #428bca;
+}
+/* Title Color blue */
+.p-red big,
+.p-red h3 {
+	  color: #428bca;
+ }
+
+
+
+/* Glyphicon Red */
+span.glyphicon-stats{
+    font-size: 2.9em;
+    color: #d9534f;
+	  display: block;
+	  margin: auto;
+    margin-bottom:7px;
+}
+/* Button Color Red */
+.p-blue button {
+	  background: #d9534f;
+  }
+/* Title Color Red */
+.p-blue big,
+.p-blue h3 {
+	  color: #d9534f;
+  }
+
+
+
+
+
+/* --------- END PRICING TABLES BOOTSTRAP CSS ----------*/
+.btn-outline {
+    color: inherit;
+    transition: all .5s;
+      background-color:transparent;
+
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+      background-color:transparent;
+
+  
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+      background-color:transparent;
+
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+      background-color:transparent;
+
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+      background-color:transparent;
+
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+    background-color:transparent;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+
+.btn-outline.btn-lg {
+    background-color: transparent;
+    padding-left:50px;
+    padding-right:50px;
+}
+
+.btn-danger{
+      background-color: transparent;
+       padding-left: 0px;
+    padding-right: 0px; 
+    color:transparent;
+}
+
+.btn.btn-round {
+  border-radius: 250px;
+  border-radius: 100%;
+        padding: 2px;
+        margin: 0 4px 0 0;
+        top: 0;
+        font-size: 10px;
+        text-align: center;
+    background-color:transparent;
+    max-width:50px;
+    max-height:100%;
+}
+
+.text{
+  color:#000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size:15px;
+}
+
+
+
+.leaflet-container {
+    width: 70vw;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    box-sizing: border-box;
+    padding: 2em;
+    width: 30vw;
+  }
+  
+  .sidebar h2,
+  .sidebar p,
+  .sidebar ul {
+    text-align: left;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+  }
+  
+  .sidebar button {
+    width: 100%;
+    font-weight: bold;
+    padding: .8em 1em;
+  }

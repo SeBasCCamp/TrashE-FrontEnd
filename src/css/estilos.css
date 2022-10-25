@@ -256,7 +256,7 @@ a:hover {
 	font-size: 0.875rem;
 	line-height: 1.875rem;
 	transition: all 0.2s;
-	-webkit-appearance: none;
+	
 	/* removes inner shadow on form inputs on ios safari */
 }
 
@@ -435,6 +435,7 @@ input[type='checkbox'] {
 .header .h1-large {
 	margin-bottom: 1.75rem;
 	color: #ffffff;
+	text-align: left;
 }
 
 .header .btn-solid-lg:hover {
