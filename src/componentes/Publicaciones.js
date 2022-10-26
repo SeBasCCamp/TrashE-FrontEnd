@@ -1,8 +1,24 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "../css/estilos-publi.css"
+import { NavLink } from "react-router-dom";
+import "../css/estilonavMap.css"
 const Publicaciones = () => {
   return (
     <div>
+      <nav>
+                
+                <h2>Trash - E</h2>
+                
+                <ul>
+                    <li>
+                        <NavLink to={"/user/map"}>Mapa</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={"/user/publicaciones"}>Reportes</NavLink>
+                    </li>
+                </ul>
+            </nav>
       
 
       <div className="main">
@@ -17,7 +33,7 @@ const Publicaciones = () => {
                 <p className="card_text">
                   Se ve mucha basura enviar a alguien porfacvor
                 </p>
-                <p>Av. Javier Prado 298</p>
+                <p className='card_direction'>Av. Javier Prado 298</p>
               </div>
             </div>
           </li>
@@ -25,9 +41,9 @@ const Publicaciones = () => {
       </div>
       <div className="btn-container">
         <div className="btn-float">
-          <a className="btn" href="/">
+          <Link className="btn" to={"/user/reportes"}>
             Publica!
-          </a>
+          </Link> 
         </div>
       </div>
     </div>

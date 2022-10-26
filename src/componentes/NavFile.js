@@ -20,27 +20,27 @@ export default function NavFile() {
                 >
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Link className="nav-link page-scroll" to={"user/user-login"}>
+                            <Link className="nav-link page-scroll" to={"user/login"}>
                                 Inicia Sesión
                             </Link>
                             
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link page-scroll" to={"user/user-map"}>
+                            <Link className="nav-link page-scroll" to={"user/map"}>
                                 Mapa
                             </Link>
                             
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link page-scroll" to={"user/user-publicaciones"}>
+                            <Link className="nav-link page-scroll" to={"user/publicaciones"}>
                                 Publicaciones
                             </Link>
                             
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link page-scroll" to={"user/user-reportes"}>
+                            <Link className="nav-link page-scroll" to={"user/reportes"}>
                                 Reportes
                             </Link>
                             

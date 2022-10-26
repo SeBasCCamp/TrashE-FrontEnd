@@ -11,7 +11,7 @@ export default function Header() {
                     <div className="col-lg-6">
                         <div className="text-container">
                             <h1 className="h1-large">Cuida el medio ambiente y tu ciudad</h1>
-                            <Link className="btn-solid-lg page-scroll" to={"user/user-register"}>
+                            <Link className="btn-solid-lg page-scroll" to={"user/register"}>
                                 Registrate
                             </Link>
                         </div>

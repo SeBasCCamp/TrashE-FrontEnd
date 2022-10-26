@@ -5,18 +5,20 @@ import Mapa from "../componentes/Mapa";
 import Publicaciones from "../componentes/Publicaciones"
 import FromReportes from "../componentes/FromReportes";
 
-function UsuarioLayout() {
+
+function UserLayout() {
     return (
-        <>
+        <>  
+            
             <Routes>
-                <Route path="user-login" element={<Login />} />
-                <Route path="user-register" element={<Register />} />
-                <Route exact path="user-map" element={<Mapa />} />
-                <Route exact path="/user-publicaciones" element={<Publicaciones />} />
-                <Route exact path="/user-reportes" element={<FromReportes />} />
+                <Route  path="login" element={<Login />} />
+                <Route  path="register" element={<Register />} />
+                <Route  path="map" element={<Mapa />} />
+                <Route  path="publicaciones" element={<Publicaciones />} />
+                <Route  path="reportes" element={<FromReportes />} />
             </Routes>
         </>
     );
 }
 
-export default UsuarioLayout;
+export default UserLayout;

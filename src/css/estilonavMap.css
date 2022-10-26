@@ -1,0 +1,35 @@
+nav {
+	display: flex; /* 1 */
+	justify-content: space-between; /* 2 */
+	
+	background: hwb(0 29% 71%); /* 4 */
+  }
+  
+  nav ul {
+	display: flex; /* 5 */
+	list-style: none; /* 6 */
+  margin-right: 180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+  
+  nav li {
+	padding-left: 1rem; /* 7! */
+  padding-right: 10px;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  
+  }
+
+  nav a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%)
+  }
+
+  nav h2{
+    margin-left: 180px;
+    color: white;
+    padding-top: 15px;
+    font-size: 30px;
+    font-weight: 700;
+   font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";;
+  }
