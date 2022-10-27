@@ -23,6 +23,13 @@
     padding:13px;
   
 }
+ul li a:link, a:visited, a:active{
+  text-decoration: none;
+}
+
+ul li a:hover{
+  color: white;
+}
 
 .content li:first-child,
 .content li:last-child {
@@ -99,7 +106,7 @@ span.glyphicon-globe {
 .p-red button {
 	  background: #428bca;
 }
-/* Title Color blue */
+
 .p-red big,
 .p-red h3 {
 	  color: #428bca;
@@ -107,7 +114,7 @@ span.glyphicon-globe {
 
 
 
-/* Glyphicon Red */
+
 span.glyphicon-stats{
     font-size: 2.9em;
     color: #d9534f;
@@ -115,11 +122,11 @@ span.glyphicon-stats{
 	  margin: auto;
     margin-bottom:7px;
 }
-/* Button Color Red */
+
 .p-blue button {
 	  background: #d9534f;
   }
-/* Title Color Red */
+
 .p-blue big,
 .p-blue h3 {
 	  color: #d9534f;
@@ -129,7 +136,7 @@ span.glyphicon-stats{
 
 
 
-/* --------- END PRICING TABLES BOOTSTRAP CSS ----------*/
+
 .btn-outline {
     color: inherit;
     transition: all .5s;
@@ -236,3 +243,10 @@ span.glyphicon-stats{
     font-weight: bold;
     padding: .8em 1em;
   }
+
+  .puntos_png{
+    max-width: 43%;
+    max-height: 43%;
+    margin-top: 40px;
+  }
+
