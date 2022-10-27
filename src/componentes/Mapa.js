@@ -4,8 +4,7 @@ import L from 'leaflet';
 import "../css/estilosMapa.css"
 import "../css/estilonavMap.css"
 import { NavLink } from "react-router-dom";
-
-
+//Funcion enviar punto de reciclaje
 
 
 const defaultCenter = [-12.029289, -77.0350];

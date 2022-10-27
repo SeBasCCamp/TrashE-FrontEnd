@@ -4,7 +4,6 @@ import '../css/login.css'
 import axios from "axios";
 import {useState} from 'react';
 
-
 export default function Login() {
 
     const [correo, setCorreo] = useState('');
@@ -77,7 +76,7 @@ export default function Login() {
                                 </div>
 
                                 <div className="d-grid mb-2">
-                                    <button onClick={SendDataLogin}
+                                    <button onClick={SendDataLogin()}
                                         className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
                                     >
                                         Iniciar Sesión
