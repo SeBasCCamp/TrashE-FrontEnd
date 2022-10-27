@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/login.css'
 import axios from "axios";
 import {useState} from 'react';
+import { Link } from "react-router-dom";
 
 export default function Login() {
 
@@ -76,11 +77,13 @@ export default function Login() {
                                 </div>
 
                                 <div className="d-grid mb-2">
+                                    <Link to={"../map"}>
                                     <button onClick={SendDataLogin()}
                                         className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
                                     >
                                         Iniciar Sesión
                                     </button>
+                                    </Link>
                                 </div>
 
                                 <hr className="my-4" />
