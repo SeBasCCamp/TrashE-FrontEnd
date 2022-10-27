@@ -31,12 +31,12 @@ export default function Login() {
           axios(config)
           .then(function (response) {
             console.log(JSON.stringify(response.data));
+            localStorage.setItem("Token_provisional",JSON.stringify(response.data.Token_provisional).replace(/['"]+/g, ''));
           })
           .catch(function (error) {
             console.log(error);
           });
         }
-    
     return (
         <div className="containeres">
             <div className="row">
