@@ -6,10 +6,10 @@ import { Link, NavLink } from "react-router-dom";
 const FromReportes = () => {
     return (
         <div>
-             <nav>
-                
+            <nav>
+
                 <h2>Trash - E</h2>
-                
+
                 <ul>
                     <li>
                         <NavLink to={"/user/map"}>Mapa</NavLink>
@@ -51,15 +51,15 @@ const FromReportes = () => {
                 </div>
                 <div className="form__item">
                     <label htmlFor="image" className="form__label">
-                        Añade una imagen
+                        Añade una imagen (Proximamente)
                     </label>
                     <input type="file" className="form__input" name="image" id="image" />
                 </div>
                 <div className="form__item">
                     <Link to={"/user/register"}>
-                    <button className="form__btn" type="submit">
-                        Publica
-                    </button>
+                        <button className="form__btn" type="submit">
+                            Publica
+                        </button>
                     </Link>
                 </div>
             </form>
