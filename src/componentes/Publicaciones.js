@@ -24,20 +24,15 @@ function cargarPuntosReciclaje() {
 
     const results = JSON.stringify(response.data);
     console.log(results);
-    const obj = [JSON.parse(results)];
-    console.log(obj);
-    /*for (const employee of response.data) {
-      results.push(
-        <div key={employee.Id}>
-          <h2>name: {employee.Título}</h2>
-          
-  
-          <hr />
-        </div>,
-      );
+    let obj = [JSON.parse(results)];
+    //console.log(obj);
+    let myArray = Object.entries(obj);
+    let arrayFinal = myArray[0][1];
+    //console.log(myArray[0][1]);
 
-
-      }*/
+    arrayFinal.forEach(element => {
+      console.log(element)
+    });
     
   })
   .catch(function (error) {
