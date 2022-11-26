@@ -4,6 +4,7 @@ import '../css/login.css'
 import axios from "axios";
 import {useState} from 'react';
 import { Link } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 
 export default function Login() {
 
@@ -30,13 +31,31 @@ export default function Login() {
           console.log(config.url)
           axios(config)
           .then(function (response) {
-            console.log(JSON.stringify(response.data));
+            
+            
             localStorage.setItem("Token_provisional",JSON.stringify(response.data.Token_provisional).replace(/['"]+/g, ''));
-          })
+            
+            console.log(JSON.stringify(response.data));
+            console.log(jwtDecode(response.data.Token_provisional))
+                var token_decode = jwtDecode(response.data.Token_provisional) 
+                //token_decode = JSON.parse(token_decode)
+                if(token_decode.id == undefined ){
+                    
+    
+                } 
+                else{
+                    alert("Login Aceptado")
+                }
+
+         })
           .catch(function (error) {
             console.log(error);
           });
         }
+    function validacionLogin(){
+      
+    }
+
     return (
         <div className="containeres">
             <div className="row">
@@ -77,13 +96,12 @@ export default function Login() {
                                 </div>
 
                                 <div className="d-grid mb-2">
-                                    <Link to={"../map"}>
                                     <button onClick={SendDataLogin()}
                                         className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
                                     >
                                         Iniciar Sesión
                                     </button>
-                                    </Link>
+                                    
                                 </div>
 
                                 <hr className="my-4" />
@@ -93,7 +111,7 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>
 
-    )
+    )
 }
