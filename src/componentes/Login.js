@@ -39,7 +39,7 @@ export default function Login() {
             console.log(jwtDecode(response.data.Token_provisional))
                 var token_decode = jwtDecode(response.data.Token_provisional) 
                 //token_decode = JSON.parse(token_decode)
-                if(token_decode.id == undefined ){
+                if(token_decode.id == undefined){
                     
                 } 
                 else{
@@ -51,8 +51,14 @@ export default function Login() {
             console.log(error);
           });
         }
-    function validacionLogin(){
-      
+    
+    function validacion() {
+     
+    }
+
+    function multi() {
+        SendDataLogin();
+         validacion()
     }
 
     return (
@@ -95,9 +101,7 @@ export default function Login() {
                                 </div>
 
                                 <div className="d-grid mb-2">
-                                    <button onClick={SendDataLogin()}
-                                        className="btn btn-lg btn-success btn-login fw-bold text-uppercase"
-                                    >
+                                    <button onClick= {SendDataLogin()} className="btn btn-lg btn-success btn-login fw-bold text-uppercase">
                                         Iniciar Sesión
                                     </button>
                                     
