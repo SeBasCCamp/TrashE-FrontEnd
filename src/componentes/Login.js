@@ -41,7 +41,6 @@ export default function Login() {
                 //token_decode = JSON.parse(token_decode)
                 if(token_decode.id == undefined ){
                     
-    
                 } 
                 else{
                     alert("Login Aceptado")
