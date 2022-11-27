@@ -1,3 +1,4 @@
+//Renderizar en un virtual DOM
 import {render, screen} from '@testing-library/react'
 import Login from '../componentes/Login'
 import '@testing-library/jest-dom'
