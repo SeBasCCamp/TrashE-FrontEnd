@@ -47,7 +47,7 @@ export default function Mapa() {
         <div className=''>
             <nav>
               
-                <h2>Trash - E</h2>
+            <h2><a href='/'> Trash - E</a></h2>
                
                 <ul>
                     <li>

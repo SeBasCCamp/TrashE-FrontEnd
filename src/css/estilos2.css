@@ -105,3 +105,7 @@ textarea.form__input {
 .form__btn:active {
   background: #0fa942;
 }
+
+.reporte-total{
+  margin-left: 178px;
+}

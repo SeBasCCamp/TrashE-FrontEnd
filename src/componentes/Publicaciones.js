@@ -80,8 +80,9 @@ cargarPuntosReciclaje();
 
   return (
     <div>
-      <nav> 
-                <h2>Trash - E</h2>
+      <nav>     
+                
+                <h2><a href='/'> Trash - E</a></h2>
                 <ul>
                     <li>
                         <NavLink to={"/user/map"}>Mapa</NavLink>

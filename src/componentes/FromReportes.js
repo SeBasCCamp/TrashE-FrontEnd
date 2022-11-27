@@ -56,7 +56,7 @@ const FromReportes = () => {
         <div>
             <nav>
 
-                <h2>Trash - E</h2>
+            <h2><a href='/'> Trash - E</a></h2>
 
                 <ul>
                     <li>
@@ -67,7 +67,7 @@ const FromReportes = () => {
                     </li>
                 </ul>
             </nav>
-            
+            <div className='reporte-total'>
                 <div className="form__title">Ayudanos con tu reporte</div>
                 <p className="form__desc">
                     Con tu reporte estas ayudando a mejorar el medio ambiente.
@@ -106,6 +106,7 @@ const FromReportes = () => {
                         </button>
                 </div>
            
+        </div>
         </div>
     )
 }
