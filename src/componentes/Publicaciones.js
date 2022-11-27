@@ -4,21 +4,9 @@ import "../css/estilos-publi.css"
 import { NavLink } from "react-router-dom";
 import "../css/estilonavMap.css"
 import axios from 'axios';
-import { useState } from 'react';
 
 const Publicaciones = () => {
-  //Definir variables
-  const [titulo, setTitulo] = useState('');
-  const [descripcion, setDescripcion] = useState('');
-  //colocar Titulo
-  const setearTitulo = event => {
-    setTitulo.toString()
-    setTitulo(event.config.value);
-
-    console.log('Email es:', event.target.value);
   
-  };
-  //Funcion enviar punto de reciclaje
 function cargarPuntosReciclaje() {
   
   var Token_provisional = localStorage.getItem("Token_provisional")
@@ -33,43 +21,9 @@ function cargarPuntosReciclaje() {
   axios(config)
   .then(function (response) {
     console.log(JSON.stringify(response.data));
-
     const results = response.data
-    console.log(results);
-    const arrayFinal = results
-    //return results
-    
-    //let obj = [JSON.parse(results)];
-    //let myArray = Object.entries(obj);
-    //let arrayFinal = myArray[0][1];
-    //*******************VALORES****************
-    //ValoresId
-    let valoresId = arrayFinal.map(function(element){
-      return element.Id
-    })
-    
-    console.log(valoresId);
-    //ValoresTítulo
-    let valoresTítulo = arrayFinal.map(function(element){
-      return element.Título
-    })
-    console.log(valoresTítulo);
-    //ValoresDescri
-    let valoresDescri = arrayFinal.map(function(element){
-      return element.Descripción
-    })
-    console.log(valoresDescri)
-    //ValoresIdUsuario
-    let valoresIdUsuario = arrayFinal.map(function(element){
-      return element.Id_usuario
-    })
-    console.log(valoresIdUsuario);
-    //**********************************************************************
-    //ARRAY OBJETO PREDI
-    arrayFinal.forEach(element => {
-      let arregloValores = element;
-      console.log(arregloValores);
-    });
+    console.log(results);    
+
   })
   .catch(function (error) {
     console.log(error);
@@ -78,7 +32,7 @@ function cargarPuntosReciclaje() {
 }
 function cerrarSesion() {
   let token = localStorage.getItem('Token_provisional');
-  if (token == undefined) {
+  if (token === undefined) {
     alert("No ha iniciado sesión")
     window.location.href = 'http://localhost:3000/user/login'
   } else {
@@ -124,7 +78,6 @@ cargarPuntosReciclaje();
                   >
                   Hay mucho desmonte
                 </h2>
-                
                 <p className="card_text">
                   Se ve mucha basura enviar a alguien porfacvor
                 </p>
