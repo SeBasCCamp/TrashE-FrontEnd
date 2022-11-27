@@ -52,6 +52,7 @@ const FromReportes = () => {
             console.log(error);
           });
         }
+
     return (
         <div>
             <nav>
