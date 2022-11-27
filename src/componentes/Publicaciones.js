@@ -76,6 +76,20 @@ function cargarPuntosReciclaje() {
   });
 
 }
+function cerrarSesion() {
+  let token = localStorage.getItem('Token_provisional');
+  if (token == undefined) {
+    alert("No ha iniciado sesión")
+    window.location.href = 'http://localhost:3000/user/login'
+  } else {
+   // Código cuando Storage NO es compatible
+   alert("Se ha cerrado sesión correctamente");
+    localStorage.removeItem('Token_provisional');
+    window.location.href = 'http://localhost:3000/'
+  }
+  
+  console.log(token)
+}
 cargarPuntosReciclaje();
 
   return (
@@ -90,7 +104,7 @@ cargarPuntosReciclaje();
                     <li>
                         <NavLink to={"/user/publicaciones"}>Reportes</NavLink>
                     </li>
-                  <button >
+                  <button onClick={cerrarSesion}>
                     Cerrar sesión
                   </button>
                 </ul>
@@ -127,14 +141,6 @@ cargarPuntosReciclaje();
             Publica!
           </Link> 
         </div>
-      </div>
-      <div className="btn-container">
-        <div className="btn-float">
-          <Link className="btn" to={"/user/reportes"}>
-            Publica!
-          </Link> 
-        </div>
-        
       </div>
     </div>
     
