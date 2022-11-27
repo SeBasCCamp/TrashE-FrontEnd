@@ -4,8 +4,20 @@ import "../css/estilos-publi.css"
 import { NavLink } from "react-router-dom";
 import "../css/estilonavMap.css"
 import axios from 'axios';
+import { useState } from 'react';
 
 const Publicaciones = () => {
+  //Definir variables
+  const [titulo, setTitulo] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  //colocar Titulo
+  const setearTitulo = event => {
+    setTitulo.toString()
+    setTitulo(event.config.value);
+
+    console.log('Email es:', event.target.value);
+  
+  };
   //Funcion enviar punto de reciclaje
 function cargarPuntosReciclaje() {
   
@@ -17,21 +29,25 @@ function cargarPuntosReciclaje() {
       'Authorization': `Bearer ${Token_provisional}`
     }
   };
-  
+
   axios(config)
   .then(function (response) {
     console.log(JSON.stringify(response.data));
 
-    const results = JSON.stringify(response.data);
+    const results = response.data
     console.log(results);
-    let obj = [JSON.parse(results)];
-    let myArray = Object.entries(obj);
-    let arrayFinal = myArray[0][1];
+    const arrayFinal = results
+    //return results
+    
+    //let obj = [JSON.parse(results)];
+    //let myArray = Object.entries(obj);
+    //let arrayFinal = myArray[0][1];
     //*******************VALORES****************
     //ValoresId
     let valoresId = arrayFinal.map(function(element){
       return element.Id
     })
+    
     console.log(valoresId);
     //ValoresTítulo
     let valoresTítulo = arrayFinal.map(function(element){
@@ -48,7 +64,7 @@ function cargarPuntosReciclaje() {
       return element.Id_usuario
     })
     console.log(valoresIdUsuario);
-    //***********************************************************************
+    //**********************************************************************
     //ARRAY OBJETO PREDI
     arrayFinal.forEach(element => {
       let arregloValores = element;
@@ -58,12 +74,13 @@ function cargarPuntosReciclaje() {
   .catch(function (error) {
     console.log(error);
   });
+
 }
-cargarPuntosReciclaje()
+cargarPuntosReciclaje();
+
   return (
     <div>
-      <nav>
-                
+      <nav> 
                 <h2>Trash - E</h2>
                 <ul>
                     <li>
@@ -85,8 +102,14 @@ cargarPuntosReciclaje()
               <div className="card_image">
                 <img alt='a' src="https://e.rpp-noticias.io/normal/2015/12/22/002600_50069.jpg" />
               </div>
+             
               <div className="card_content">
-                <h2 className="card_title">Hay mucho desmonte</h2>
+                <h2
+                  className="card_title"
+                  >
+                  Hay mucho desmonte
+                </h2>
+                
                 <p className="card_text">
                   Se ve mucha basura enviar a alguien porfacvor
                 </p>
@@ -95,6 +118,14 @@ cargarPuntosReciclaje()
             </div>
           </li>
         </ul>
+      </div>
+      
+      <div className="btn-container">
+        <div className="btn-float">
+          <Link className="btn" to={"/user/reportes"}>
+            Publica!
+          </Link> 
+        </div>
       </div>
       <div className="btn-container">
         <div className="btn-float">

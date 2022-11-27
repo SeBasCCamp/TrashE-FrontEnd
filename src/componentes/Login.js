@@ -42,6 +42,7 @@ export default function Login() {
                 } 
                 else{
                     alert("Login Aceptado")
+                    window.location.href = 'http://localhost:3000/user/map'
                 }
          })
           .catch(function (error) {
