@@ -100,8 +100,12 @@ export default function Login() {
                                 </div>
 
                                 <div className="d-grid mb-2">
+<<<<<<< HEAD
 
                                     <button onClick={SendDataLogin} className="btn btn-lg btn-success btn-login fw-bold text-uppercase">
+=======
+                                    <button onClick={ () => SendDataLogin()} className="btn btn-lg btn-success btn-login fw-bold text-uppercase">
+>>>>>>> ca98dba88dce93a983251924e8007b773582aaaa
                                         Iniciar Sesión
                                     </button>
                                     
