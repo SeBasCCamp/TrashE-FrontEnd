@@ -72,6 +72,9 @@ cargarPuntosReciclaje()
                     <li>
                         <NavLink to={"/user/publicaciones"}>Reportes</NavLink>
                     </li>
+                  <button >
+                    Cerrar sesión
+                  </button>
                 </ul>
             </nav>
       
@@ -99,6 +102,7 @@ cargarPuntosReciclaje()
             Publica!
           </Link> 
         </div>
+        
       </div>
     </div>
     
