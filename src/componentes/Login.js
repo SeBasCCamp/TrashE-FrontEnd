@@ -22,6 +22,7 @@ export default function Login() {
 
         console.log('Contraseña es:', event.target.value);
     };
+
     function SendDataLogin() {
         var config = {
             method: 'post',
@@ -30,36 +31,34 @@ export default function Login() {
           };
           console.log(config.url)
           axios(config)
-          .then(function (response) {
-            
-            
+          .then(function(response) {
             localStorage.setItem("Token_provisional",JSON.stringify(response.data.Token_provisional).replace(/['"]+/g, ''));
-            
             console.log(JSON.stringify(response.data));
             console.log(jwtDecode(response.data.Token_provisional))
                 var token_decode = jwtDecode(response.data.Token_provisional) 
                 //token_decode = JSON.parse(token_decode)
-                if(token_decode.id == undefined){
-                    
+                if(token_decode.id === undefined){
+                    alert("Error de inicio de Sesión, verificar su correo y/o contraseña")
                 } 
                 else{
                     alert("Login Aceptado")
                 }
-
          })
           .catch(function (error) {
             console.log(error);
           });
         }
-    
+    /*
     function validacion() {
-     
-    }
-
-    function multi() {
-        SendDataLogin();
-         validacion()
-    }
+        var token_decode = localStorage.getItem("Token_provisional")
+                //token_decode = JSON.parse(token_decode)
+                if(token_decode.id == undefined){
+                    alert("Error de inicio de Sesión, verificar su correo y/o contraseña")
+                } 
+                else{
+                    alert("Login Aceptado")
+                }
+    }*/
 
     return (
         <div className="containeres">
@@ -101,15 +100,14 @@ export default function Login() {
                                 </div>
 
                                 <div className="d-grid mb-2">
-                                    <button onClick= {SendDataLogin()} className="btn btn-lg btn-success btn-login fw-bold text-uppercase">
+
+                                    <button onClick={SendDataLogin} className="btn btn-lg btn-success btn-login fw-bold text-uppercase">
                                         Iniciar Sesión
                                     </button>
                                     
                                 </div>
 
-                                <hr className="my-4" />
-
-                        
+                                <hr className="my-4" />                    
                         </div>
                     </div>
                 </div>

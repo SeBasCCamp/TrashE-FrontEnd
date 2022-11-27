@@ -25,15 +25,35 @@ function cargarPuntosReciclaje() {
     const results = JSON.stringify(response.data);
     console.log(results);
     let obj = [JSON.parse(results)];
-    //console.log(obj);
     let myArray = Object.entries(obj);
     let arrayFinal = myArray[0][1];
-    //console.log(myArray[0][1]);
-
+    //*******************VALORES****************
+    //ValoresId
+    let valoresId = arrayFinal.map(function(element){
+      return element.Id
+    })
+    console.log(valoresId);
+    //ValoresTítulo
+    let valoresTítulo = arrayFinal.map(function(element){
+      return element.Título
+    })
+    console.log(valoresTítulo);
+    //ValoresDescri
+    let valoresDescri = arrayFinal.map(function(element){
+      return element.Descripción
+    })
+    console.log(valoresDescri)
+    //ValoresIdUsuario
+    let valoresIdUsuario = arrayFinal.map(function(element){
+      return element.Id_usuario
+    })
+    console.log(valoresIdUsuario);
+    //***********************************************************************
+    //ARRAY OBJETO PREDI
     arrayFinal.forEach(element => {
-      console.log(element)
+      let arregloValores = element;
+      console.log(arregloValores);
     });
-    
   })
   .catch(function (error) {
     console.log(error);
