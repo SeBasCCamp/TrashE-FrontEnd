@@ -22,7 +22,11 @@ function cargarPuntosReciclaje() {
   .then(function (response) {
     console.log(JSON.stringify(response.data));
     const results = response.data
-    console.log(results);    
+    console.log(results);
+    console.log(results[8]);    
+    const resultadoIterados =results.map(function(resultados){
+      return resultados.Id
+    });
 
   })
   .catch(function (error) {
@@ -41,15 +45,39 @@ function cerrarSesion() {
     localStorage.removeItem('Token_provisional');
     window.location.href = 'http://localhost:3000/'
   }
-  
   console.log(token)
 }
-cargarPuntosReciclaje();
+  
 
-  return (
+  function extraccionArray(indice){
+    var Token_provisional = localStorage.getItem("Token_provisional")
+    var config = {
+      method: 'get',
+      url: 'http://157.245.136.111:5000/PointOfTrash',
+      headers: { 
+        'Authorization': `Bearer ${Token_provisional}`
+      }
+    };
+  
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      const results = response.data
+      console.log(results[indice]);
+      return results[indice] 
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+  }
+
+cargarPuntosReciclaje();
+extraccionArray(8);
+
+  return ( 
     <div>
       <nav>     
-                
                 <h2><a href='/'> Trash - E</a></h2>
                 <ul>
                     <li>
@@ -63,30 +91,12 @@ cargarPuntosReciclaje();
                   </button>
                 </ul>
             </nav>
-      
-      <div className="main">
-        <ul className="cards">
-          <li className="cards_item">
-            <div className="card">
-              <div className="card_image">
-                <img alt='a' src="https://e.rpp-noticias.io/normal/2015/12/22/002600_50069.jpg" />
-              </div>
-             
-              <div className="card_content">
-                <h2
-                  className="card_title"
-                  >
-                  Hay mucho desmonte
-                </h2>
-                <p className="card_text">
-                  Se ve mucha basura enviar a alguien porfacvor
-                </p>
-                <p className='card_direction'>Av. Javier Prado 298</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+            <iframe id="inlineFrameExample" 
+    title="Inline Frame Example"
+    width="300"
+    height="200"
+    src="http://facebook.com">
+</iframe>
       
       <div className="btn-container">
         <div className="btn-float">
